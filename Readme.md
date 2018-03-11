@@ -1,2 +1,2 @@
 # for_learning  
-Its just my memorandum.
+勉強中、あるいは実験中のコード置き場です。  
