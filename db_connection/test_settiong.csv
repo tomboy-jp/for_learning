@@ -1,0 +1,5 @@
+host,localhost
+dbname,your_db_name
+port,5432
+user,your_user_name
+password,your_password
