@@ -1,5 +1,6 @@
 import psycopg2
 import csv
+import sys
 
 # setting_data = '../../data/db_setting.csv'
 setting_data = 'test_settiong.csv'
@@ -21,3 +22,4 @@ try:
 
 except:
     print('Connection failed...')
+    sys.exit()
