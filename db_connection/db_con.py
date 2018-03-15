@@ -37,3 +37,5 @@ cur.close()
 
 for row in data:
     result.append(row)
+
+print(result)
