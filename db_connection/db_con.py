@@ -32,10 +32,10 @@ cur.execute(sql)
 
 data = cur.fetchall
 
-con.close()
-cur.close()
-
 for row in data:
     result.append(row)
+
+con.close()
+cur.close()
 
 print(result)
