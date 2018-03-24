@@ -8,6 +8,9 @@ df = pd.DataFrame(np.random.rand(10, 5))
 # colmun指定
 df.columns = ["A", "B", "C", "D", "E"]
 
+# "A"列についての情報を出力
+print(df["A"].describe())
+
 # "A"が0.4以上かつ"B"が0.9以下の行だけを抽出
 df = df[(df["A"] >= 0.4) & (df["B"] <= 0.9)]
 
