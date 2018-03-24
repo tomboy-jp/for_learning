@@ -13,7 +13,7 @@ df = df[(df["A"] > 0.5)]
 
 # indexの連番振り直し
 df = df.reset_index(drop=True)
-df
+
 # dfオブジェクトのforループの廻し方
 for index, row in df.iterrows():
     print(index, row["B"])
