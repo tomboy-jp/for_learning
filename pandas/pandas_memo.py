@@ -8,8 +8,8 @@ df = pd.DataFrame(np.random.rand(10, 5))
 # colmun指定
 df.columns = ["A", "B", "C", "D", "E"]
 
-# "A"が0.5以上の行だけを抽出
-df = df[(df["A"] > 0.5)]
+# "A"が0.4以上かつ"B"が0.9以下の行だけを抽出
+df = df[(df["A"] >= 0.4) & (df["B"] <= 0.9)]
 
 # indexの連番振り直し
 df = df.reset_index(drop=True)
