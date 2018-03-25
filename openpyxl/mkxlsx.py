@@ -2,10 +2,8 @@ import openpyxl as px
 import numpy as np
 import os
 
-l = os.listdir()
-for i in l:
-    if i == "test.xlsx":
-        os.remove("test.xlsx")
+if os.path.isfile("test.xlsx"):
+    os.remove("test.xlsx")
 
 wb = px.Workbook()
 ws = wb.active
