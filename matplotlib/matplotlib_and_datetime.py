@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 import datetime
 
 data = np.random.rand(5)
-num = [x for x in range(len(data))]
+num = np.arange(len(data))
+# num = [x for x in range(len(data))]
 
 now = datetime.datetime.now()
 date_label = []
