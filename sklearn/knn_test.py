@@ -13,7 +13,7 @@ k_list = range(1, 11)
 accuracy = []
 
 for k in k_list:
-    model = KNeighborsClassifier(n_neighbors=int(k))
+    model = KNeighborsClassifier(n_neighbors=k)
     model.fit(X_train, y_train)
     accuracy.append(model.score(X_test, y_test))
 
