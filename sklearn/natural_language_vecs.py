@@ -17,4 +17,7 @@ vecs
 
 for i1, v1 in enumerate(vecs):
     for i2, v2 in enumerate(vecs):
-        print("「" + words[i1] + "」 と 「" + words[i2] + "」 のコサイン類似度は" + "%1.3F" % cos_sim(vecs[i1], vecs[i2]) + "です。")
+        print(
+        "「" + words[i1] + "」 と 「" + words[i2] + "」 のコサイン類似度は" +
+        "%1.3F" % cos_sim(vecs[i1], vecs[i2]) + "です。"
+        )
