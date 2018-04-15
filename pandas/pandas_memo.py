@@ -23,4 +23,4 @@ for index, row in df.iterrows():
 
 # pandasでグラフを描画
 df.plot(y=["A","B","C","D","E"], colormap='cool', marker='.', markersize=10, title='DataFrameTest', figsize=(10,5), alpha=0.5)
-plt.pause(3)
+plt.pause(10)
