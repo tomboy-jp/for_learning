@@ -2,12 +2,18 @@ import matplotlib.pyplot as plt
 from sklearn.neural_network import MLPClassifier
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
+from sklearn.decomposition import PCA
 
 plt.style.use('ggplot')
 
 data = load_iris()
+X, y = data['data'], data['target']
+
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X)
+
 X_train, X_test, y_train, y_test = train_test_split(
-    data['data'], data['target'], random_state=0)
+    X_pca, y, random_state=0)
 
 activation_type = ["relu", "tanh"]
 alpha = [0.001, 0.01, 0.1, 1]
