@@ -34,7 +34,7 @@ for axx, ac in zip(axes, activation_type):
     for ax, al in zip(axx, alpha):
         model = MLPClassifier(solver="lbfgs", random_state=0, hidden_layer_sizes=[10], activation=ac, alpha=al)
         model.fit(X_train, y_train)
-        ax.scatter(X_test[:,0], X_test[:,1], c=y_test, alpha=0.6)
+        ax.scatter(X_test[:,0], X_test[:,1], c=model.predict(X_test), alpha=0.6)
         ax.set_title("ac_type:{}, alpha:{}, score:{:.3f}".format(ac, str(al), model.score(X_test,y_test)))
 
 plt.pause(20)
