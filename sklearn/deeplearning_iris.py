@@ -18,7 +18,7 @@ X, y = data['data'], data['target']
 pca = PCA(n_components=2)
 X_pca = pca.fit_transform(X)
 
-# トレインデータとテストデータを4:1に分割。
+# トレインデータとテストデータを3:1に分割。
 X_train, X_test, y_train, y_test = train_test_split(
     X_pca, y, test_size=0.25, random_state=0)
 
