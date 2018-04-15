@@ -17,7 +17,7 @@ for axx, ac in zip(axes, activation_type):
     for ax, al in zip(axx, alpha):
         model = MLPClassifier(solver="lbfgs", random_state=0, hidden_layer_sizes=[10], activation=ac, alpha=al)
         model.fit(X_train, y_train)
-        ax.scatter(X_train[:,0], X_train[:,1], c=y_train, alpha=0.6)
-        ax.set_title("activation_type:" + ac + "\nalpha:" + str(al))
+        ax.scatter(X_test[:,0], X_test[:,1], c=y_test, alpha=0.6)
+        ax.set_title("ac_type:{0} alpha:{1}\nscore{2}".format(ac, str(al), str(model.score(X_test,y_test))))
 
-plt.pause(5)
+plt.pause(20)
