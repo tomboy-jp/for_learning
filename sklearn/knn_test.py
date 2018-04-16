@@ -20,7 +20,7 @@ for k in k_list:
     train_accuracy.append(model.score(X_train, y_train))
     test_accuracy.append(model.score(X_test, y_test))
 
-# トレーニングデータとテストデータの違いをグラフに描画
+# 訓練データと試験データの違いをグラフに描画
 plt.plot(k_list, train_accuracy, label="train")
 plt.plot(k_list, test_accuracy, label="test")
 plt.xlabel("n_neighbor")

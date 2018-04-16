@@ -11,18 +11,16 @@ plt.style.use('ggplot')
 data = load_iris()
 # 特徴とラベルを格納。
 X, y = data['data'], data['target']
-# 標準化のコード。精度が悪化したため、今回は未使用。
-# X = (X - X.mean(axis=0)) / X.std(axis=0)
 
-# pcaを使って主成分分析。特徴を二次元に落とし込む。
+# pcaを使って主成分分析。特徴量を二次元に落とし込む。
 pca = PCA(n_components=2)
 X_pca = pca.fit_transform(X)
 
-# 特徴データを3:1に分割し、トレーニングデータ、テストデータとして格納。
+# 特徴データを3:1に分割し、訓練データ、試験データとして格納。
 X_train, X_test, y_train, y_test = train_test_split(
     X_pca, y, test_size=0.25, random_state=0)
 
-# relu関数とtanh関数を比較するためのリスト。
+# 活性化関数reluとtanhを比較するためのリスト。
 activation_type = ["relu", "tanh"]
 # alpha値を比較するためのリスト。
 alpha = [0.001, 0.01, 0.1, 1]
