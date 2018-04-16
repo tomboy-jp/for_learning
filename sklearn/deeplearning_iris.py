@@ -12,7 +12,7 @@ data = load_iris()
 # 特徴とラベルを格納。
 X, y = data['data'], data['target']
 
-# pcaを使って主成分分析。特徴量を二次元に落とし込む。
+# pcaを使って主成分分析。主成分を二つに絞る。
 pca = PCA(n_components=2)
 X_pca = pca.fit_transform(X)
 
