@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 from sklearn.neural_network import MLPClassifier
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 
 # matplotlibのスタイルを指定。
@@ -11,6 +12,10 @@ plt.style.use('ggplot')
 data = load_iris()
 # 特徴とラベルを格納。
 X, y = data['data'], data['target']
+
+# スケール変換 試したら精度が下がったので今回は未使用
+# ss = StandardScaler()
+# X = ss.fit_transform(X)
 
 # pcaを使って主成分分析。特徴量を二次元に落とし込む。
 pca = PCA(n_components=2)
