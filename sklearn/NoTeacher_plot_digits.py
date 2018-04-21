@@ -4,15 +4,13 @@ from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 
 digits = load_digits()
-#
-# fig, axes = plt.subplots(2, 5, figsize=(10, 5),
-#                          subplot_kw={'xticks':(), 'yticks': ()})
-# for ax, img in zip(axes.ravel(), digits.images):
-#     ax.imshow(img)
-#
-# plt.pause(3)
-#
-#
+fig, axes = plt.subplots(2, 5, figsize=(10, 5),
+                         subplot_kw={'xticks':(), 'yticks': ()})
+for ax, img in zip(axes.ravel(), digits.images):
+    ax.imshow(img)
+
+plt.pause(3)
+
 pca = PCA(n_components=2)
 pca.fit(digits.data)
 

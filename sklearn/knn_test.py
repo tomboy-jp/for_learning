@@ -1,6 +1,6 @@
+from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.datasets import make_classification
 import matplotlib.pyplot as plt
 
 # サンプルデータを作成。
