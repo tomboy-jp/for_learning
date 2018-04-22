@@ -17,8 +17,7 @@ ss = StandardScaler()
 X = ss.fit_transform(X)
 
 # よしなに分割
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
 
 # GridSearch用の辞書を作成
 param_grid = {"activation":["relu", "tanh"], "alpha":[0.001, 0.01, 0.1, 1], "hidden_layer_sizes":[[10],[30,10],[10,30,10]]}
