@@ -4,9 +4,6 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
-# matplotlibのスタイルを指定。
-plt.style.use('ggplot')
-
 # irisデータの読み込み。
 data = load_iris()
 # 特徴とラベルを格納。
@@ -20,7 +17,8 @@ X = ss.fit_transform(X)
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
 
 # GridSearch用の辞書を作成
-param_grid = {"activation":["relu", "tanh"], "alpha":[0.001, 0.01, 0.1, 1], "hidden_layer_sizes":[[10],[30,10],[10,30,10]]}
+param_grid = {"activation":["relu", "tanh"], "alpha":[0.001, 0.01, 0.1, 1],
+"hidden_layer_sizes":[[10],[30,10],[10,30,10]], "solver":["lbfgs"]}
 
 # モデルを内包したGridSearchのインスタンスを生成。
 model_gs = GridSearchCV(MLPClassifier(), param_grid, cv=5)
