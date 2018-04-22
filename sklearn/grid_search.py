@@ -1,4 +1,3 @@
-import matplotlib.pyplot as plt
 from sklearn.neural_network import MLPClassifier
 from sklearn.datasets import load_iris
 from sklearn.model_selection import GridSearchCV
