@@ -28,6 +28,7 @@ param_grid = {"activation":["relu", "tanh"], "alpha":[0.001, 0.01, 0.1, 1], "hid
 model_gs = GridSearchCV(MLPClassifier(), param_grid, cv=5)
 model_gs.fit(X_train, y_train)
 
+# 結果を出力
 print("Test Score is {:.3f}".format(model_gs.score(X_test, y_test)))
 print("Best Param is {}".format(model_gs.best_params_))
 print("Best Cross Validation Score is {:.3f}".format(model_gs.best_score_))
