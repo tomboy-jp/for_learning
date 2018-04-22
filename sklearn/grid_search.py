@@ -28,3 +28,8 @@ model_gs.fit(X_train, y_train)
 print("Test Score is {:.3f}".format(model_gs.score(X_test, y_test)))
 print("Best Param is {}".format(model_gs.best_params_))
 print("Best Cross Validation Score is {:.3f}".format(model_gs.best_score_))
+
+import pandas as pd
+
+result = pd.DataFrame(model_gs.cv_results_)
+display(result.head())
