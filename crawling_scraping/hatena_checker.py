@@ -31,7 +31,6 @@ def scrape(html):
             title = re.sub(r'data-gtm-click-label="entry-info-title">', '', title)
 
         except:
-
             title = ''
 
         try:
