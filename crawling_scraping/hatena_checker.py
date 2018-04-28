@@ -11,9 +11,8 @@ def main(url):
 def fetch(url):
 
     f = urlopen(url)
-    # HTTPヘッダーからエンコーディングを取得する（明示されていない場合はutf-8とする）。
     encoding = f.info().get_content_charset(failobj="utf-8")
-    html = f.read().decode(encoding)  # 得られたエンコーディングを指定して文字列にデコードする。
+    html = f.read().decode(encoding)
 
     return html
 
