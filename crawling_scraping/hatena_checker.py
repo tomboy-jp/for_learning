@@ -26,6 +26,8 @@ def scrape(html):
         try:
             title = re.search(r'data-gtm-click-label="entry-info-title">.*?</a>', partial_html).group()
             title = re.sub(r'<.*?>', '', title)
+            title = re.sub(r'\u3000', ' ', title)
+            title = re.sub(r'&amp;', '&', title)
             title = re.sub(r'data-gtm-click-label="entry-info-title">', '', title)
 
         except:
@@ -46,4 +48,5 @@ def scrape(html):
 
 
 if __name__ == '__main__':
+
      main("http://b.hatena.ne.jp/")
