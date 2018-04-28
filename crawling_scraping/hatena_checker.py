@@ -8,6 +8,7 @@ def main(url):
     books = scrape(html)
     pprint(books)
 
+
 def fetch(url):
 
     f = urlopen(url)
@@ -15,6 +16,7 @@ def fetch(url):
     html = f.read().decode(encoding)
 
     return html
+
 
 def scrape(html):
 
@@ -41,6 +43,7 @@ def scrape(html):
         books.append({'title': title, 'users': users})
 
     return books
+
 
 if __name__ == '__main__':
      main("http://b.hatena.ne.jp/")
