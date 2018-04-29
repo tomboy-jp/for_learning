@@ -12,7 +12,7 @@ def main(url):
 def fetch(url):
 
     f = urlopen(url)
-    encoding = f.info().get_content_charset(failobj="utf-8")
+    encoding = f.info().get_content_charset(failobj='utf-8')
     html = f.read().decode(encoding)
 
     return html
