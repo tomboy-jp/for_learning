@@ -8,6 +8,7 @@ def main():
     """
     クローラのメイン処理
     """
+
     client = MongoClient("localhost", 27017)
     collection = client.scraping.ebooks
     collection.create_index('key', unique=True)
@@ -39,6 +40,7 @@ def scrape_list_page(response):
     """
     一覧ページのResponseから表歳ページのURLを抜き出すジェネレータ関数。
     """
+
     root = lxml.html.fromstring(response.content)
     root.make_links_absolute(response.url)
 
@@ -51,6 +53,7 @@ def scrape_detail_page(response):
     """
     詳細ページのResponoseから電子書籍の情報をdictで取得する。
     """
+
     root = lxml.html.fromstring(response.content)
     ebook = {
         'url': response.url,
@@ -66,12 +69,14 @@ def normalize_spaces(str):
     """
     連続する空白を一つのスペースに置き換え、前後の空白は削除した新しい文字列を取得する。
     """
+
     return re.sub(r'\s+', '', str).strip()
 
 def extract_key(url):
     """
     URLからキー(URLの文末のISBN)を抜き出す。
     """
+    
     m = re.search(r'/([^/]+)$', url)
     return m.group(1)
 
